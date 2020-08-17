@@ -42,6 +42,8 @@ namespace Tailwind.Traders.Web.Standalone.Controllers
             var database = mongoClient.GetDatabase(databaseName);
             var collection = database.GetCollection<ShoppingCartItemDocument>(collectionName);
             var filter = Builders<ShoppingCartItemDocument>.Filter;
+			
+			throw new InvalidOperationException("Throwing this to make a point...");
 
             var guid = Guid.NewGuid().ToString();
             await collection.InsertOneAsync(new ShoppingCartItemDocument
